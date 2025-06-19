@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+        .navbar-custom {
+            background-color: #880e4f;
+        }
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand {
+            color: white !important;
+        }
+        .table-container {
+            margin: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <a class="navbar-brand" href="/">Diabetes Predictor</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+      <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="table-container">
+    <h2 class="text-center mb-4">Prediction History</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>Preg</th><th>Plas</th><th>Pres</th><th>Skin</th>
+                <th>Insu</th><th>Mass</th><th>Pedi</th><th>Age</th><th>Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in history_data %}
+            <tr>
+                <td>{{ record['preg'] }}</td>
+                <td>{{ record['plas'] }}</td>
+                <td>{{ record['pres'] }}</td>
+                <td>{{ record['skin'] }}</td>
+                <td>{{ record['insu'] }}</td>
+                <td>{{ record['mass'] }}</td>
+                <td>{{ record['pedi'] }}</td>
+                <td>{{ record['age'] }}</td>
+                <td>{{ record['result'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

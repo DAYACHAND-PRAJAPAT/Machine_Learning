@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fw8y1pf9mdhafhmimlk6s.jpeg');
+            background-color: #e3f2fd;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.3);
+            margin-top: 60px;
+        }
+        .navbar-custom {
+            background-color: #880e4f;
+        }
+        .navbar-custom .nav-link,
+        .navbar-custom .navbar-brand {
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-custom">
+  <a class="navbar-brand" href="/">Diabetes Predictor</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/history">History</a></li>
+      <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Form Section -->
+<div  class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 form-container">
+      <h3 class="text-center mb-4">Enter Medical Diagnosis</h3>
+      <form action="/predict" method="post">
+        <input class="form-control mb-2" name="preg" placeholder="Pregnancies" required>
+        <input class="form-control mb-2" name="plas" placeholder="Plasma Glucose" required>
+        <input class="form-control mb-2" name="pres" placeholder="Blood Pressure" required>
+        <input class="form-control mb-2" name="skin" placeholder="Skin Thickness" required>
+        <input class="form-control mb-2" name="insu" placeholder="Insulin" required>
+        <input class="form-control mb-2" name="mass" placeholder="BMI" required>
+        <input class="form-control mb-2" name="pedi" placeholder="Pedigree Function" required>
+        <input class="form-control mb-2" name="age" placeholder="Age" required>
+        <button type="submit" class="btn btn-primary btn-block mt-3">Predict</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
